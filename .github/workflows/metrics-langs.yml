@@ -1,42 +1,137 @@
-name: Metrics • Languages
+name: Custom Top Languages (no repo changes)
 on:
   schedule:
-    - cron: "15 3 * * *"    
+    - cron: "30 3 * * *"   
   workflow_dispatch:
 
 permissions:
-  contents: write            
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GH_OWNER: alex4923
+      GH_TOKEN: ${{ secrets.METRICS_TOKEN }} 
     steps:
-      - name: Generate languages card (global repo analysis)
-        uses: lowlighter/metrics@latest
+      - name: Checkout (to commit the SVG)
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          committer_token: ${{ secrets.METRICS_TOKEN }}
 
-          user: alex4923
-          template: classic
-          base: ""                                  
-          config_timezone: Europe/Brussels
-          repositories_affiliations: owner,collaborator,organization_member
-          repositories: 200                          
+      - name: Generate custom languages SVG
+        run: |
+          node - <<'NODE'
+          const owner = process.env.GH_OWNER;
+          const token = process.env.GH_TOKEN;
 
-          plugin_languages: yes
-          plugin_languages_indepth: no               
-          plugin_languages_sections: most-used
-          plugin_languages_details: percentage
-          plugin_languages_limit: 16                 
-          plugin_languages_categories: >-            
-            programming, markup, data, prose
-          plugin_languages_threshold: 0%          
+          const MAX_REPOS = 200;    
+          const TOP_N     = 16;     
+          const EXCLUDE_DIRS = [
+            'node_modules/', 'dist/', 'build/', '.next/', '.output/', '.nuxt/',
+            'coverage/', 'out/', '.parcel-cache/', '.cache/', '.git/', 'vendor/', 'tmp/', '.husky/'
+          ];
+          const EXT_LANG = new Map(Object.entries({
+            '.html':'HTML', '.htm':'HTML',
+            '.css':'CSS', '.scss':'SCSS', '.sass':'SASS', '.less':'Less',
+            '.js':'JavaScript', '.mjs':'JavaScript', '.cjs':'JavaScript',
+            '.ts':'TypeScript', '.tsx':'TypeScript', '.jsx':'JavaScript',
+            '.php':'PHP',
+            '.sql':'SQL',
+            '.json':'JSON', '.yml':'YAML', '.yaml':'YAML', '.xml':'XML',
+            '.md':'Markdown',
+            '.sh':'Shell', '.bat':'Batchfile', '.ps1':'PowerShell',
+            '.java':'Java', '.kt':'Kotlin', '.kts':'Kotlin',
+            '.cpp':'C++', '.c':'C', '.cs':'C#', '.py':'Python'
+          }));
 
-          plugin_languages_ignored: >-
-            node_modules, dist, build, .next, .output, .nuxt, coverage, out,
-            .parcel-cache, .cache, vendor, tmp, .git, .husky
-          filename: metrics-langs.svg
-          output_action: commit
-          committer_branch: main
-          committer_message: "chore: update metrics (langs)"
+          const api = async (url) => {
+            const r = await fetch(url, { headers: { Authorization: `token ${token}`, 'X-GitHub-Api-Version':'2022-11-28' }});
+            if (!r.ok) throw new Error(`${r.status} ${r.statusText} for ${url}`);
+            return r.json();
+          };
+
+          const listAllRepos = async () => {
+            let page=1, all=[];
+            while(true){
+              const url = `https://api.github.com/user/repos?per_page=100&page=${page}&sort=updated`;
+              const data = await api(url);
+              all = all.concat(data);
+              if (data.length < 100 || all.length >= MAX_REPOS) break;
+              page++;
+            }
+            return all.filter(r => r.owner.login.toLowerCase() === owner.toLowerCase());
+          };
+
+          const shouldExcludePath = (p) => EXCLUDE_DIRS.some(dir => p.includes(`/${dir}`) || p.startsWith(dir) );
+
+          const extOf = (path) => {
+            const m = path.toLowerCase().match(/(\.[a-z0-9]+)$/);
+            return m ? m[1] : '';
+          };
+
+          const sumByLang = {};
+          (async () => {
+            const repos = await listAllRepos();
+
+            for (const repo of repos) {
+              const branch = repo.default_branch || 'main';
+              try {
+                const tree = await api(`https://api.github.com/repos/${owner}/${repo.name}/git/trees/${encodeURIComponent(branch)}?recursive=1`);
+                if (!tree.tree) continue;
+                for (const item of tree.tree) {
+                  if (item.type !== 'blob') continue;
+                  const path = item.path;
+                  if (shouldExcludePath(path)) continue;
+                  const ext = extOf(path);
+                  const lang = EXT_LANG.get(ext);
+                  if (!lang) continue;           
+                  const size = item.size || 0;   
+                  sumByLang[lang] = (sumByLang[lang] || 0) + size;
+                }
+              } catch(e) {
+              }
+            }
+
+            const entries = Object.entries(sumByLang).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]).slice(0, TOP_N);
+            const total = entries.reduce((s,[,v])=>s+v,0) || 1;
+
+            const width = 640, barH = 22, gap = 10, leftPad = 140, rightPad = 20, topPad = 40, bottomPad = 20;
+            const height = topPad + bottomPad + entries.length*(barH+gap);
+            const esc = (s)=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+            let bars = '';
+            entries.forEach(([lang, bytes], i) => {
+              const pct = bytes/total;
+              const w = Math.max(2, Math.round((width-leftPad-rightPad)*pct));
+              const y = topPad + i*(barH+gap);
+              const pctTxt = (pct*100).toFixed(pct>=0.1?1:2)+'%';
+              bars += `
+                <text x="16" y="${y+barH*0.75}" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> ${esc(lang)} </text>
+                <rect x="${leftPad}" y="${y}" width="${w}" height="${barH}" rx="6" fill="#238636"/>
+                <text x="${leftPad + w + 8}" y="${y+barH*0.75}" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">${pctTxt}</text>
+              `;
+            });
+
+            const title = `Top languages across public + private repos (by bytes)`;
+            const svg = `<?xml version="1.0" encoding="UTF-8"?>
+            <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+              <rect width="100%" height="100%" fill="#0d1117"/>
+              <text x="20" y="26" fill="#c9d1d9" font-size="18" font-weight="600" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">${esc(title)}</text>
+              <text x="20" y="40" fill="#8b949e" font-size="12" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">Owner: ${esc(owner)} • Repos scanned: ${esc(String(Object.keys(sumByLang).length? 'up to '+Math.min(MAX_REPOS, repos.length): '0'))}</text>
+              ${bars}
+            </svg>`;
+
+            const fs = require('fs');
+            fs.writeFileSync('top-langs-custom.svg', svg, 'utf8');
+            console.log('Generated top-langs-custom.svg');
+          })().catch(e=>{ console.error(e); process.exit(1); });
+          NODE
+
+      - name: Commit SVG
+        run: |
+          git config user.name  "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add top-langs-custom.svg
+          git commit -m "chore: update custom top languages" || echo "No changes"
+          git push
