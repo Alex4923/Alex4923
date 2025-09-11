@@ -35,7 +35,7 @@ jobs:
 
           plugin_languages_ignored: >-
             node_modules, dist, build, .next, .output, .nuxt, coverage, out,
-            .parcel-cache, .cache, vendor, public, tmp, .git, .husky
+            .parcel-cache, .cache, vendor, tmp, .git, .husky
           filename: metrics-langs.svg
           output_action: commit
           committer_branch: main
