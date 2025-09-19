@@ -36,13 +36,13 @@
       <rect x="140" y="264" width="2" height="22" rx="6" fill="#238636"/>
       <text x="150" y="280.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.12%</text>
     
-      <text x="16" y="312.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> SQL </text>
+      <text x="16" y="312.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C# </text>
       <rect x="140" y="296" width="2" height="22" rx="6" fill="#238636"/>
       <text x="150" y="312.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.11%</text>
     
-      <text x="16" y="344.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C# </text>
+      <text x="16" y="344.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> SQL </text>
       <rect x="140" y="328" width="2" height="22" rx="6" fill="#238636"/>
-      <text x="150" y="344.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.10%</text>
+      <text x="150" y="344.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.11%</text>
     
       <text x="16" y="376.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C++ </text>
       <rect x="140" y="360" width="2" height="22" rx="6" fill="#238636"/>
