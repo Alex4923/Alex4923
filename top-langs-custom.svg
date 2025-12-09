@@ -6,7 +6,7 @@
     
       <text x="16" y="56.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> JavaScript </text>
       <rect x="140" y="40" width="288" height="22" rx="6" fill="#238636"/>
-      <text x="436" y="56.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">60.1%</text>
+      <text x="436" y="56.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">60.0%</text>
     
       <text x="16" y="88.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> CSS </text>
       <rect x="140" y="72" width="67" height="22" rx="6" fill="#238636"/>
@@ -18,7 +18,7 @@
     
       <text x="16" y="152.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> PHP </text>
       <rect x="140" y="136" width="33" height="22" rx="6" fill="#238636"/>
-      <text x="181" y="152.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">6.89%</text>
+      <text x="181" y="152.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">6.88%</text>
     
       <text x="16" y="184.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> JSON </text>
       <rect x="140" y="168" width="19" height="22" rx="6" fill="#238636"/>
@@ -34,7 +34,7 @@
     
       <text x="16" y="280.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Less </text>
       <rect x="140" y="264" width="3" height="22" rx="6" fill="#238636"/>
-      <text x="151" y="280.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.60%</text>
+      <text x="151" y="280.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.59%</text>
     
       <text x="16" y="312.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> TypeScript </text>
       <rect x="140" y="296" width="2" height="22" rx="6" fill="#238636"/>
