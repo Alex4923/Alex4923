@@ -1,7 +1,7 @@
 name: Custom Top Languages (no repo changes)
 on:
   schedule:
-    - cron: "30 3 * * *"   
+    - cron: "30 3 * * 1"   
   workflow_dispatch:
 
 permissions:
