@@ -5,32 +5,32 @@
     <text x="20" y="40" fill="#8b949e" font-size="12" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">Owner: alex4923 • Repos scanned: up to 53</text>
     
       <text x="16" y="56.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> JavaScript </text>
-      <rect x="140" y="40" width="284" height="22" rx="6" fill="#238636"/>
-      <text x="432" y="56.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">59.2%</text>
+      <rect x="140" y="40" width="282" height="22" rx="6" fill="#238636"/>
+      <text x="430" y="56.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">58.8%</text>
     
       <text x="16" y="88.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> CSS </text>
-      <rect x="140" y="72" width="66" height="22" rx="6" fill="#238636"/>
-      <text x="214" y="88.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">13.8%</text>
+      <rect x="140" y="72" width="65" height="22" rx="6" fill="#238636"/>
+      <text x="213" y="88.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">13.6%</text>
     
       <text x="16" y="120.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> HTML </text>
-      <rect x="140" y="104" width="56" height="22" rx="6" fill="#238636"/>
-      <text x="204" y="120.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">11.6%</text>
+      <rect x="140" y="104" width="55" height="22" rx="6" fill="#238636"/>
+      <text x="203" y="120.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">11.5%</text>
     
       <text x="16" y="152.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> PHP </text>
       <rect x="140" y="136" width="35" height="22" rx="6" fill="#238636"/>
-      <text x="183" y="152.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">7.25%</text>
+      <text x="183" y="152.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">7.19%</text>
     
       <text x="16" y="184.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> JSON </text>
       <rect x="140" y="168" width="19" height="22" rx="6" fill="#238636"/>
-      <text x="167" y="184.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">3.92%</text>
+      <text x="167" y="184.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">3.91%</text>
     
-      <text x="16" y="216.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Markdown </text>
-      <rect x="140" y="200" width="6" height="22" rx="6" fill="#238636"/>
-      <text x="154" y="216.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">1.26%</text>
+      <text x="16" y="216.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C# </text>
+      <rect x="140" y="200" width="8" height="22" rx="6" fill="#238636"/>
+      <text x="156" y="216.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">1.76%</text>
     
-      <text x="16" y="248.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C# </text>
-      <rect x="140" y="232" width="5" height="22" rx="6" fill="#238636"/>
-      <text x="153" y="248.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">1.11%</text>
+      <text x="16" y="248.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Markdown </text>
+      <rect x="140" y="232" width="6" height="22" rx="6" fill="#238636"/>
+      <text x="154" y="248.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">1.25%</text>
     
       <text x="16" y="280.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Less </text>
       <rect x="140" y="264" width="3" height="22" rx="6" fill="#238636"/>
@@ -42,7 +42,7 @@
     
       <text x="16" y="344.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Python </text>
       <rect x="140" y="328" width="2" height="22" rx="6" fill="#238636"/>
-      <text x="150" y="344.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.33%</text>
+      <text x="150" y="344.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.32%</text>
     
       <text x="16" y="376.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> C++ </text>
       <rect x="140" y="360" width="2" height="22" rx="6" fill="#238636"/>
@@ -58,7 +58,7 @@
     
       <text x="16" y="472.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> PowerShell </text>
       <rect x="140" y="456" width="2" height="22" rx="6" fill="#238636"/>
-      <text x="150" y="472.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.06%</text>
+      <text x="150" y="472.5" font-size="13" fill="#ddd" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial">0.10%</text>
     
       <text x="16" y="504.5" font-size="13" fill="#aaa" font-family="Segoe UI, system-ui, -apple-system, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial"> Java </text>
       <rect x="140" y="488" width="2" height="22" rx="6" fill="#238636"/>
